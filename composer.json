@@ -1,0 +1,41 @@
+{
+    "name": "impact-blue/laravel-job-posting",
+    "description": "Easily add job posting structured data to your job posts.",
+    "keywords": [
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "株式会社インパクトブルー",
+            "email": "martin@impact-blue.co.jp"
+        }
+    ],
+    "require": {
+        "illuminate/view": "^5.7"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "ImpactBlue\\JobPosting\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ImpactBlue\\JobPosting\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ImpactBlue\\JobPosting\\JobPostingServiceProvider"
+            ],
+            "aliases": {
+                "JobPosting": "ImpactBlue\\JobPosting\\Facades\\JobPosting"
+            }
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
