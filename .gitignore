@@ -1,2 +1,8 @@
+# Hidden files
 .php_cs.cache
+
+# Files
 composer.lock
+
+# Folders
+vendor

@@ -33,7 +33,12 @@ class JobPostingServiceProvider extends ServiceProvider
         $this->publishConfig();
         $this->publishView();
 
-        $this->app->singleton(JobPosting::class, 'ImpactBlue\JobPosting\JobPosting::class');
+        $this->app->singleton('JobPosting', function($app)
+        {
+            $jobPosting = $this->app->make('ImpactBlue\JobPosting\JobPosting');
+
+            return $jobPosting;
+        });
     }
 
     /**
