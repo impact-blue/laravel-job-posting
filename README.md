@@ -26,7 +26,7 @@ After publishing laravel-job-posting's config its primary configuration file wil
 This configuration file allows you to configure what data to use for the required properties described here:  
 https://developers.google.com/search/docs/data-types/job-posting
 
-You may use any model attributes available in the model passed to `{{ JobPosting::render($job) }}`.  
+You may use any model attributes available in the model passed to `{!! JobPosting::render($job) !!}`.  
 If the defined string is not a model attribute the defined string will be used as is.  
 If you plan on defining a required property using the second parameter of the render function (see below) you may set the property to `false` in the configuration file and it will be skipped during the property check.
 
@@ -55,7 +55,7 @@ $optionalProperties = [
 And in your blade file:
 ```
 #!blade
-{{ JobPosting::render($job, $optionalProperties) }}
+{!! JobPosting::render($job, $optionalProperties) !!}
 ```
 
 ## License
