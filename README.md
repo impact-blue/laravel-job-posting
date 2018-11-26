@@ -6,28 +6,28 @@
 Easily add job posting structured data to your job posts.
 
 ## Introduction
-Google is bringing their job search experience to more and more countries, and with that comes the need to have properly structured job posting data.  
+Google is bringing their job search experience to more and more countries, and with that comes the need to have properly structured job posting data.
 
 ![Job posting](https://developers.google.com/search/docs/data-types/images/jobs-search-ui.png)
 
-This package supplies the `JobPosting` facade, allowing you to easily add properly structured json-ld job postings to any blade template using `{{ JobPosting::render($job) }}`.
+This package supplies the `JobPosting` facade, allowing you to easily add properly structured json-ld job postings to any blade template using `{!! JobPosting::render($job) !!}`.
 
 ## Installation
 You may use Composer to install laravel-job-posting into your Laravel project:
-	
+
 	composer require impact-blue/laravel-job-posting
 
 After installing laravel-job-posting, publish its config usinfg the vendor:publish Artisan command:
 
 	php artisan vendor:publish
-	
+
 ## Configuration
-After publishing laravel-job-posting's config its primary configuration file will be located at config/job-posting.php.  
-This configuration file allows you to configure what data to use for the required properties described here:  
+After publishing laravel-job-posting's config its primary configuration file will be located at config/job-posting.php.
+This configuration file allows you to configure what data to use for the required properties described here:
 https://developers.google.com/search/docs/data-types/job-posting
 
-You may use any model attributes available in the model passed to `{!! JobPosting::render($job) !!}`.  
-If the defined string is not a model attribute the defined string will be used as is.  
+You may use any model attributes available in the model passed to `{!! JobPosting::render($job) !!}`.
+If the defined string is not a model attribute the defined string will be used as is.
 If you plan on defining a required property using the second parameter of the render function (see below) you may set the property to `false` in the configuration file and it will be skipped during the property check.
 
 ### Optional properties
