@@ -1,0 +1,17 @@
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.2'
+      - run: composer install
+      - run: vendor/bin/phpstan analyse src/
+    timeout-minutes: 15
+
+on:
+  push:
+    branches:
+      - 'bugfix/**'
+      - 'feature/**'
